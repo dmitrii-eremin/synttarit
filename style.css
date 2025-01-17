@@ -984,14 +984,3 @@ body {
 .not-loaded * {
   animation-play-state: paused !important;
 }
-
-.happy-birthday {
-  position: fixed;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 5vmin;
-  color: white;
-  z-index: 100;
-  text-align: center;
-}
