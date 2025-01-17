@@ -34,7 +34,7 @@ var select = function(el) {
   btn_crazy = select("btn-crazy"),
   btn_sexy = select("btn-sexy");
 
-btn_happy.onclick = function() {
+make_it_happy = function() {
   glasses.style.display = "none";
   eyes_happy.style.display = "block";
   eyes_crazy.style.display = "none";
@@ -50,7 +50,8 @@ btn_happy.onclick = function() {
   timelineInit();
   tlHappy.play();
 };
-btn_cool.onclick = function() {
+
+make_it_cool = function() {
   glasses.style.display = "block";
   eyes_happy.style.display = "none";
   eyes_crazy.style.display = "none";
@@ -66,7 +67,8 @@ btn_cool.onclick = function() {
   timelineInit();
   tlCool.play();
 };
-btn_crazy.onclick = function() {
+
+make_it_crazy  = function() {
   glasses.style.display = "none";
   eyes_happy.style.display = "none";
   eyes_sexy.style.display = "none";
@@ -82,7 +84,8 @@ btn_crazy.onclick = function() {
   timelineInit();
   tlCrazy.play();
 };
-btn_sexy.onclick = function() {
+
+make_it_sexy = function() {
   glasses.style.display = "none";
   eyes_happy.style.display = "none";
   eyes_crazy.style.display = "none";
@@ -98,6 +101,19 @@ btn_sexy.onclick = function() {
   timelineInit();
   tlSexy.play();
 };
+
+// btn_happy.onclick = make_it_happy;
+// btn_cool.onclick = make_it_cool;
+// btn_crazy.onclick = make_it_crazy;
+// btn_sexy.onclick = make_it_sexy;
+
+flowerModes = [make_it_happy, make_it_cool, make_it_crazy, make_it_sexy];
+
+setInterval(function() {
+  var randomFlower = flowerModes[Math.floor(Math.random() * flowerModes.length)];
+  randomFlower();
+}
+, 5000);
 
 function timelineInit() {
   TweenMax.set(stem_1, {
