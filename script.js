@@ -757,3 +757,24 @@ tlSexy
     "four"
   );
 tlSexy.timeScale(0.6);
+
+window.checkpassword = function() {
+  var el = document.getElementById('passvalue');
+  if (el.value === 'showmeflowers') {
+    document.getElementById('password').style.display = 'none';
+    document.getElementById('mainview').style.display = 'flex';
+  }
+  else {
+    el.value = '';
+    var btn = document.getElementById('pwdbutton');
+    btn.textContent = 'Нет, попробуй еще раз';
+    btn.style.width = '250px';
+  }
+}
+
+
+function search(ele) {
+  if(event.key === 'Enter') {
+      checkpassword();
+  }
+}
