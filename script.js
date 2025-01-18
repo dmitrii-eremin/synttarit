@@ -107,14 +107,6 @@ make_it_sexy = function() {
 // btn_crazy.onclick = make_it_crazy;
 // btn_sexy.onclick = make_it_sexy;
 
-flowerModes = [make_it_happy, make_it_cool, make_it_crazy, make_it_sexy];
-
-setInterval(function() {
-  var randomFlower = flowerModes[Math.floor(Math.random() * flowerModes.length)];
-  randomFlower();
-}
-, 5000);
-
 function timelineInit() {
   TweenMax.set(stem_1, {
     scaleY: 1,
@@ -760,7 +752,7 @@ tlSexy.timeScale(0.6);
 
 window.checkpassword = function() {
   var el = document.getElementById('passvalue');
-  if (el.value === 'showmeflowers') {
+  if (el.value === 'show me your secret') {
     document.getElementById('password').style.display = 'none';
     document.getElementById('mainview').style.display = 'flex';
   }
@@ -778,3 +770,18 @@ function search(ele) {
       checkpassword();
   }
 }
+
+flowerModes = [make_it_happy, make_it_cool, make_it_crazy, make_it_sexy];
+//flowerModes = [make_it_cool];
+
+var flowerIndex = 0;
+
+setInterval(function() {
+  // const index = Math.floor(Math.random() * flowerModes.length);
+  // console.log(index);
+  // var randomFlower = flowerModes[index];
+  // randomFlower();
+  flowerIndex = (flowerIndex + 1) % flowerModes.length;
+  flowerModes[flowerIndex]();
+}
+, 5000);
